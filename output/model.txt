@@ -1,0 +1,2521 @@
+MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)MobileNetV4(
+  (conv0): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer1): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer2): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(32, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (layer3): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(64, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=64, bias=False)
+        (BatchNorm2d): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(64, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (BatchNorm2d): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(192, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer4): Sequential(
+    (uib_0): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False)
+        (BatchNorm2d): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (BatchNorm2d): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_1): UniversalInvertedBottleneckBlock(
+      (_start_dw_): Sequential(
+        (conv): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_2): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_3): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(384, 384, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=384, bias=False)
+        (BatchNorm2d): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_4): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (uib_5): UniversalInvertedBottleneckBlock(
+      (_expand_conv): Sequential(
+        (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_middle_dw): Sequential(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512, bias=False)
+        (BatchNorm2d): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (Activation): ReLU6()
+      )
+      (_proj_conv): Sequential(
+        (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (BatchNorm2d): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (layer5): Sequential(
+    (convbn_0): Sequential(
+      (conv): Conv2d(128, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+    (convbn_1): Sequential(
+      (conv): Conv2d(960, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (BatchNorm2d): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (Activation): ReLU6()
+    )
+  )
+  (head): Linear(in_features=1280, out_features=17, bias=True)
+)

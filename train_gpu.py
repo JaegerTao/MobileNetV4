@@ -346,9 +346,9 @@ def main(args):
     # print('Initial LR is ', linear_scaled_lr)
     # print('*****************')
 
-    optimizer = create_optimizer(args, model_without_ddp)
+    # optimizer = create_optimizer(args, model_without_ddp)
 
-    # optimizer = SophiaG(model_without_ddp.parameters(), lr=2e-4, betas=(0.965, 0.99), rho=0.01, weight_decay=args.weight_decay) if args.finetune else create_optimizer(args, model_without_ddp)
+    optimizer = SophiaG(model_without_ddp.parameters(), lr=2e-4, betas=(0.965, 0.99), rho=0.01, weight_decay=args.weight_decay) if args.finetune else create_optimizer(args, model_without_ddp)
 
     loss_scaler = NativeScaler()
     lr_scheduler, _ = create_scheduler(args, optimizer)
@@ -512,6 +512,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         'MobileNetV4 training and evaluation script', parents=[get_args_parser()])
     args = parser.parse_args()
+    args.data_root = 'D:\MyWork\Datas\htpsplit\TL_realwoman'
+    args.epochs = 10
+    args.nb_classes = 17
+    args.batch_size = 24
+    args.lr = 0.001
+    args.device = 'cuda'
+    args.start_epoch = 2
+
     if args.output_dir:
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     main(args)
